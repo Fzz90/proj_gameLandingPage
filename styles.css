@@ -1,0 +1,183 @@
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Features animation */
+@keyframes slideFeatures {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(calc(-315px * 8 - 4rem * 8));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.features-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.features-track {
+    display: flex;
+    gap: 2rem;
+    animation: slideFeatures 125s ease-in infinite;
+    /* width: fit-content; */
+}
+
+.feature-card {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+    min-width: 250px;
+    max-width: 250px;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.feature-card:hover::before {
+    left: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Pause animation on hover */
+.features-container:hover .features-track {
+    animation-play-state: paused;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #241c31;
+    border-radius: 10px;
+    transition: all 0.6s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7c3aed;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #6d28d9;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #5b21b6;
+}
+
+/* Alert Box Styles */
+#customAlert {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+#customAlert.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Update other purple elements in light mode */
+.bg-magic-600 {
+    background-color: #241c31 !important;
+}
+
+.hover\:bg-magic-700:hover {
+    background-color: #241c31 !important;
+}
+
+/* Light mode button hover with whitened effect */
+.hover\:bg-magic-900:hover {
+    background-color: rgba(36, 28, 49, 0.8) !important;
+    backdrop-filter: brightness(1.2) !important;
+}
+
+/* Dark mode button hover with more purple effect */
+.dark .hover\:bg-magic-900:hover {
+    background-color: #5b21b6 !important;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.3) !important;
+}
+
+.text-magic-500 {
+    color: #241c31 !important;
+}
+
+.border-magic-500 {
+    border-color: #241c31 !important;
+}
+
+.hover\:shadow-magic-600\/50:hover {
+    box-shadow: 0 10px 15px -3px rgba(36, 28, 49, 0.5) !important;
+}
+
+/* Keep dark mode colors unchanged */
+.dark .bg-magic-600 {
+    background-color: #8b5cf6 !important;
+}
+
+.dark .hover\:bg-magic-700:hover {
+    background-color: #7c3aed !important;
+}
+
+.dark .text-magic-500 {
+    color: #8b5cf6 !important;
+}
+
+.dark .border-magic-500 {
+    border-color: #8b5cf6 !important;
+}
+
+.dark .hover\:shadow-magic-600\/50:hover {
+    box-shadow: 0 10px 15px -3px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Navbar Styles */
+#navbar {
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+#navbar.visible {
+    box-shadow: 0 4px 9px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.39);
+} 
