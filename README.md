@@ -37,7 +37,6 @@ The website includes:
 ---
 
 ## 🤖 AI Support Explanation
-- This landing page was created with the help of AI assistance in:
 - Structuring and writing HTML/CSS with best practices.
 - Adding smooth animations and interactive UI components.
 - Generating responsive and aesthetic design choices.
